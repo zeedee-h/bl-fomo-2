@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+   <script src="list.js"></script> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    
+</head>
+
+<body>
+    
+    
+    
+    <div id="hacker-list">
+        
+        <div id="inputs">
+            <input class="search" placeholder="Search">
+            <span class='sort-by'>Sort by:</span>
+            <button class="sort" data-sort="startEndTime">Time</button>
+            <button class="sort" data-sort="eventTitle">Event Title</button>
+            <button class="sort" data-sort="location">Location</button>
+            <button class="sort" data-sort="eventType">Event Type</button>
+            <button class="sort" data-sort="familyFriendly">Family Friendly</button>
+            <button class="sort" data-sort="hostPlayaName">Host Name</button>
+            <button class="sort" data-sort="day">Day</button>
+            <span class='sort-by'>Filter:</span>
+            <select name="day" id="daySelect">
+              <option value="alldays">All Days</option>
+              <option value="2018-07-19">Monday</option>
+              <option value="2018-07-20">Tuesday</option>
+              <option value="2018-07-21">Wednesday</option>
+              <option value="2018-07-22">Thursday</option>
+              <option value="2018-07-23">Friday</option>
+              <option value="2018-07-24">Saturday</option>
+              <option value="2018-07-25">Sunday</option>
+            </select>
+            <button class="fav">Favourites</button>
+        </div>
+        
+        <ul id="container" class="list"></ul>
+    </div>
+    
+  <script src="js/scripts.js"></script>
+</body>
+</html>
