@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+  <title>Borderland FOMO Guide 2019</title>
+  <meta name="description" content="fomo guide">
+  <meta name="author" content="Xavier Butcher">
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -17,20 +17,10 @@
 
 <body>
     
-    
-    
-    <div id="hacker-list">
+    <div id="event-list">
         
         <div id="inputs">
             <input class="search" placeholder="Search">
-            <span class='sort-by'>Sort by:</span>
-            <button class="sort" data-sort="startEndTime">Time</button>
-            <button class="sort" data-sort="eventTitle">Event Title</button>
-            <button class="sort" data-sort="location">Location</button>
-            <button class="sort" data-sort="eventType">Event Type</button>
-            <button class="sort" data-sort="familyFriendly">Family Friendly</button>
-            <button class="sort" data-sort="hostPlayaName">Host Name</button>
-            <button class="sort" data-sort="day">Day</button>
             <span class='sort-by'>Filter:</span>
             <select name="day" id="daySelect">
               <option value="alldays">All Days</option>
@@ -42,7 +32,17 @@
               <option value="2018-07-24">Saturday</option>
               <option value="2018-07-25">Sunday</option>
             </select>
-            <button class="fav">Favourites</button>
+            <button class="fav btn">Favourites</button>
+            <br>
+            <span class='sort-by'>Sort by:</span>
+            <button class="sort btn" data-sort="startEndTime">Time</button>
+            <button class="sort btn" data-sort="eventTitle">Event Title</button>
+            <button class="sort btn" data-sort="location">Location</button>
+            <button class="sort btn" data-sort="eventType">Event Type</button>
+            <button class="sort btn" data-sort="familyFriendly">Family Friendly</button>
+            <button class="sort btn" data-sort="hostPlayaName">Host Name</button>
+            <button class="sort btn" data-sort="day">Day</button>
+
         </div>
         
         <ul id="container" class="list"></ul>

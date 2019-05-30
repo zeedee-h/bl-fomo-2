@@ -30,7 +30,7 @@ function populate(data, selectedDay, callback){
                             <p class="bold">At <span class="location green">${data[i].location}</span> on <span class="day blue">${data[i].day}</span> from <span class="startEndTime magenta">${data[i].startEndTime}</span></p>
                             <p class="bold"><span class="familyFriendly orange">${data[i].familyFriendly}</span> <span class="eventType yellow">${data[i].eventType}</span> by <span class="hostPlayaName yellow">${data[i].hostPlayaName}</span></p>
                             <p>${data[i].description}</p>
-                            <p class="right"><i class="far fa-heart fa-2x" job="favourite"></i></p> 
+                            <p class="right"><i class="far fa-heart fa-3x" job="favourite"></i></p> 
                             </li>
                             `
                             //<i class="fas fa-heart"></i> for filled heart
@@ -39,7 +39,7 @@ function populate(data, selectedDay, callback){
         
         if (selectedDay == "alldays" ) {
             $('#container').append(eventContent);
-        }else if(data[i].day == selectedDay){
+        }else if(data[i].day == selectedDay){ //https://medium.com/@switzerlandhero/5-ways-to-check-if-a-string-contains-a-substring-in-javascript-523ac134f878
             $('#container').append(eventContent);
         };
         
@@ -71,7 +71,7 @@ function indexListJS() {
     var options = {
         valueNames: [ 'eventTitle', 'description', 'hostPlayaName', 'eventType', 'location', 'startEndTime', 'familyFriendly', 'day' ]
     };
-    var hackerList = new List('hacker-list', options);  
+    var eventList = new List('event-list', options);  
 };
 
 const CHECK = "far";
