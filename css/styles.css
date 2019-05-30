@@ -9,7 +9,7 @@ li {
 }
 
 #event-list{
-    /*max-width: 500px;*/
+    max-width: 500px;
 }
 
 .eventBox {
@@ -52,23 +52,6 @@ p {
 .orange {color: #dc7426;}
 .blue {color: #0f75aa;} /* day */
 
-
-.btn {
-  background-color: #0faa89; /* Green */
-  border: none;
-  border-radius: 30px;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 0 5px 5px;
-}
-
-.search {
-  padding: 15px 32px;
-}
-#daySelect {
-  padding: 15px 32px; 
+#inputs {
+    font-family: sans-serif;
 }
