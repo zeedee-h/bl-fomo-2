@@ -17,7 +17,7 @@ function repopulate(){
         type: "get",
         cache: false,
         success: function(data) {
-           console.log(data.length);
+           console.log("loaded " + data.length + " events");
            populate(data, indexListJS);
            }
     });
@@ -25,12 +25,25 @@ function repopulate(){
 };    
 
 //read localStorage
-let savedFaves = ["D21A7CB0", "DF61D0E8"];
+
+
+            /*var savedFaves = new Array();
+
+            savedFaves.push("D21A7CB0", "DF61D0E8");
+
+            var JSONReadyFaves = JSON.stringify(savedFaves);
+
+            localStorage.setItem("saved favourites", JSONReadyFaves);*/
+
+
+    //var NewSavedFaves = JSON.parse(localStorage["JSONReadyFaves"]);
+
+//let savedFaves = ["D21A7CB0", "DF61D0E8"];
 
 function populate(data, callback){
     for (i = 0; i < data.length; i++) {
         
-        if (savedFaves.includes(data[i].eventID)) {
+        if (simpleStorage.hasKey(data[i].eventID)) { //was if (savedFaves.includes(data[i].eventID)) {
         var fasORfar = "fas";    
         } else {
         var fasORfar = "far";      
@@ -41,7 +54,7 @@ function populate(data, callback){
                             <p class="bold">At <span class="location green">${data[i].location}</span> on <span class="day blue">${data[i].day}</span> from <span class="startEndTime magenta">${data[i].startEndTime}</span></p>
                             <p class="bold"><span class="familyFriendly orange">${data[i].familyFriendly}</span> <span class="eventType yellow">${data[i].eventType}</span> by <span class="hostPlayaName yellow">${data[i].hostPlayaName}</span></p>
                             <p>${data[i].description}</p>
-                            <p class="right"><i class="${fasORfar} fa-heart fa-3x" job="favourite"></i></p> 
+                            <p class="right"><i class="${fasORfar} fa-heart fa-5x" job="favourite"></i></p> 
                             </li>
                             `
         
@@ -95,7 +108,15 @@ function addFav(element){
     element.classList.toggle(UNCHECK);
     
     console.log("Toggled favourite for " + element.parentNode.parentNode.id);
-    savedFaves.push(element.parentNode.parentNode.id);
+    /*savedFaves.push(element.parentNode.parentNode.id);
+    
+    var JSONReadyFaves = JSON.stringify(savedFaves);
+    localStorage.setItem("saved favourites", JSONReadyFaves);*/
+    
+    var key = element.parentNode.parentNode.id;
+    var value = true;
+    
+    simpleStorage.set(key, value);
 }
 
 function removeFav(element){       
@@ -104,10 +125,18 @@ function removeFav(element){
     
     console.log("Toggled favourite for " + element.parentNode.parentNode.id);
     
-    var index = savedFaves.indexOf(element.parentNode.parentNode.id);    // <-- Not supported in <IE9
+    /*var index = savedFaves.indexOf(element.parentNode.parentNode.id);    // <-- Not supported in <IE9
     if (index !== -1) {
     savedFaves.splice(index, 1);
     }
+    
+    var JSONReadyFaves = JSON.stringify(savedFaves);
+    localStorage.setItem("saved favourites", JSONReadyFaves);*/
+    
+    var key = element.parentNode.parentNode.id;
+    var value = false;
+    
+    simpleStorage.deleteKey(key);
 }
 
 const list2 = document.getElementById("container");
@@ -116,17 +145,39 @@ list2.addEventListener("click", function() {
     let element = event.target;
     const elementJOB = event.target.attributes.job.value;
     
-    if (elementJOB == "favourite" && !savedFaves.includes(element.parentNode.parentNode.id)) {
+    if (elementJOB == "favourite" && !simpleStorage.hasKey(element.parentNode.parentNode.id)) { //was (elementJOB == "favourite" && !savedFaves.includes(element.parentNode.parentNode.id))
         addFav(element);
         //update localStorage
         
-    } else if (elementJOB == "favourite" && savedFaves.includes(element.parentNode.parentNode.id)) {
+    } else if (elementJOB == "favourite" && simpleStorage.hasKey(element.parentNode.parentNode.id)) {
         removeFav(element);
         //update localStorage
         
     };
 
 });
+
+
+document.getElementById("favbtn").addEventListener("click", filterFavs);
+
+function filterFavs() {
+    console.log("filtered favs");
+    
+    var eventNodes = document.getElementById("container").children.length;
+    console.log(eventNodes + " event nodes");
+    
+    //load alldays first, this only shows favs on current day. or is this fine??
+    
+    for (i = 0; i < eventNodes; i++) {
+
+        if (document.getElementById("container").children[i].children[4].children[0].classList.contains("far")) {
+            document.getElementById("container").children[i].classList.toggle("hidden");    
+        };
+
+    };
+}
+
+
 
 /*
 function logH1(element) {

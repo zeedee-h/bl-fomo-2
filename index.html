@@ -10,7 +10,8 @@
 
   <link rel="stylesheet" href="css/styles.css?v=1.0">
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-   <script src="list.js"></script> 
+   <script src="js/list.js"></script> 
+   <script src="js/simpleStorage.js"></script>  
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     
 </head>
@@ -19,7 +20,7 @@
     
     <div id="event-list">
         
-        <div id="inputs">
+        <div id="inputs-text">
             <input class="search" placeholder="Search">
             <span class='sort-by'>Filter:</span>
             <select name="day" id="daySelect">
@@ -32,7 +33,7 @@
               <option value="2018-07-24">Saturday</option>
               <option value="2018-07-25">Sunday</option>
             </select>
-            <button class="fav btn">Favourites</button>
+            <button id="favbtn" class="fav btn">Favourites</button>
 
             <span class='sort-by'>Sort by:</span>
             <button class="sort btn" data-sort="startEndTime">Time</button>

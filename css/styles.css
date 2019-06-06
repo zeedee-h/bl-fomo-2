@@ -9,7 +9,7 @@ li {
 }
 
 #event-list{
-    max-width: 500px;
+    width: 100%;
 }
 
 .eventBox {
@@ -42,16 +42,58 @@ p {
 
 .right {
     text-align: right;
-    margin-right: 10px;
+    margin-right: 5%;
     /*display: none;*/
 }
 
 .green {color: #0faa89;}
-.magenta {color: #a65177; white-space: nowrap;} /* time */
+.magenta {color: #a65177;} /*white-space: nowrap;}  time */
 .yellow {color: #deca22;}
 .orange {color: #dc7426;}
 .blue {color: #0f75aa;} /* day */
 
-#inputs {
+#inputs-text {
     font-family: sans-serif;
+    font-size: 3rem;
+    line-height: 200%;
+}
+
+.btn {
+    font-size: 3rem;
+    padding: 5px 15px;
+    border-radius: 25px;
+    border: none;
+    display: inline-block;
+    color: #2e2e2e;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.05);
+    margin: 2px 0;
+}
+
+.search {
+    font-size: 3rem;
+    padding: 5px 15px;
+    border-radius: 25px;
+    border: none;
+    display: inline-block;
+    color: #2e2e2e;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.05);
+    margin: 2px 0;
+}
+
+#daySelect {
+    font-size: 3rem;
+    padding: 5px 15px;
+    border-radius: 25px;
+    border: none;
+    display: inline-block;
+    color: #2e2e2e;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.05);
+    margin: 2px 0;
+}
+
+.hidden {
+    display: none;
 }
