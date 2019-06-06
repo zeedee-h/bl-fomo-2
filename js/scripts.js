@@ -54,7 +54,7 @@ function populate(data, callback){
                             <p class="bold">At <span class="location green">${data[i].location}</span> on <span class="day blue">${data[i].day}</span> from <span class="startEndTime magenta">${data[i].startEndTime}</span></p>
                             <p class="bold"><span class="familyFriendly orange">${data[i].familyFriendly}</span> <span class="eventType yellow">${data[i].eventType}</span> by <span class="hostPlayaName yellow">${data[i].hostPlayaName}</span></p>
                             <p>${data[i].description}</p>
-                            <p class="right"><i class="${fasORfar} fa-heart fa-5x" job="favourite"></i></p> 
+                            <p class="right"><i class="${fasORfar} fa-heart fa-4x" job="favourite"></i></p> 
                             </li>
                             `
         
