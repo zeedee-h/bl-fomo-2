@@ -26,12 +26,12 @@ li {
 }
 
 h1 {
-    font-size: 15px;
+    font-size: 3rem;
 }
 
 p {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 2.2rem;
+    line-height: 150%;
 }
 
 .bold {
@@ -54,46 +54,55 @@ p {
 
 #inputs-text {
     font-family: sans-serif;
-    font-size: 3rem;
-    line-height: 200%;
-}
-
-.btn {
-    font-size: 3rem;
-    padding: 5px 15px;
-    border-radius: 25px;
-    border: none;
-    display: inline-block;
-    color: #2e2e2e;
-    text-decoration: none;
-    background-color: rgba(0,0,0,0.05);
-    margin: 2px 0;
-}
-
-.search {
-    font-size: 3rem;
-    padding: 5px 15px;
-    border-radius: 25px;
-    border: none;
-    display: inline-block;
-    color: #2e2e2e;
-    text-decoration: none;
-    background-color: rgba(0,0,0,0.05);
-    margin: 2px 0;
-}
-
-#daySelect {
-    font-size: 3rem;
-    padding: 5px 15px;
-    border-radius: 25px;
-    border: none;
-    display: inline-block;
-    color: #2e2e2e;
-    text-decoration: none;
-    background-color: rgba(0,0,0,0.05);
-    margin: 2px 0;
 }
 
 .hidden {
     display: none;
 }
+
+/*@media only screen and (max-width: 400px) {
+ For mobile phones: */
+    #daySelect {
+    font-size: 3rem;
+    padding: 5px 15px;
+    border-radius: 25px;
+    border: none;
+    display: inline-block;
+    color: #2e2e2e;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.05);
+    margin: 2px 0;
+    }
+
+    .btn {
+    font-size: 3rem;
+    padding: 5px 15px;
+    border-radius: 25px;
+    border: none;
+    display: inline-block;
+    color: #2e2e2e;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.05);
+    margin: 2px 0;
+    }
+
+    .search {
+    font-size: 3rem;
+    padding: 5px 15px;
+    border-radius: 25px;
+    border: none;
+    display: inline-block;
+    color: #2e2e2e;
+    text-decoration: none;
+    background-color: rgba(0,0,0,0.05);
+    margin: 2px 0;
+    }
+
+    #inputs-text {
+    font-size: 3rem;
+    line-height: 200%;
+    }
+    
+    #event-list{
+        width: 100%;
+    }
